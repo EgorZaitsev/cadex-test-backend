@@ -1,7 +1,15 @@
 import express from "express"
+import cors from "cors"
 import { json } from "body-parser"
 
+
+
 const app = express()
+const corsOptions = {
+	origin: 'https://cadextest-frontend-c3db37-585fd7-147-45-175-42.traefik.me',
+}
+
+app.use(cors(corsOptions))
 app.use(json())
 
 app.post("/api/triangulate", (req, res) => {
